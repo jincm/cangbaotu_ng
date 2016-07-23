@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name cangbaotuNgApp.controller:AboutCtrl
+ * @name cbtNgCssApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the cangbaotuNgApp
+ * Controller of the cbtNgCssApp
  */
-angular.module('cangbaotuNgApp')
+angular.module('cbtNgCssApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

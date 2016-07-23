@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name cangbaotuNgApp
+ * @name cbtNgCssApp
  * @description
- * # cangbaotuNgApp
+ * # cbtNgCssApp
  *
  * Main module of the application.
  */
 angular
-  .module('cangbaotuNgApp', [
+  .module('cbtNgCssApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -28,11 +28,6 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
-      })
-      .when('/user', {
-        templateUrl: 'views/user.html',
-        controller: 'UserCtrl',
-        controllerAs: 'user'
       })
       .otherwise({
         redirectTo: '/'
