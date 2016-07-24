@@ -61,6 +61,11 @@ gulp.task('lint:scripts', function () {
     .pipe(lintScripts());
 });
 
+gulp.task('tmpcopy', function () {
+  return gulp.src('./bower_components/**/*.*')
+         .pipe(gulp.dest('./.tmp/bower_components/'));
+});
+
 gulp.task('clean:tmp', function (cb) {
   rimraf('./.tmp', cb);
 });
@@ -69,7 +74,7 @@ gulp.task('start:client', ['start:server', 'styles'], function () {
   openURL('http://localhost:9000');
 });
 
-gulp.task('start:server', function() {
+gulp.task('start:server', ['tmpcopy'], function() {
   $.connect.server({
     root: [yeoman.app, '.tmp'],
     livereload: true,
@@ -136,10 +141,10 @@ gulp.task('test', ['start:server:test'], function () {
 gulp.task('bower', function () {
   return gulp.src(paths.views.main)
     .pipe(wiredep({
-      directory: yeoman.app + '/bower_components',
+      directory: yeoman.app + '/../bower_components',
       ignorePath: '..'
     }))
-  .pipe(gulp.dest(yeoman.app + '/views'));
+  .pipe(gulp.dest(yeoman.app + '/'));
 });
 
 ///////////
@@ -194,7 +199,7 @@ gulp.task('copy:fonts', function () {
 });
 
 gulp.task('build', ['clean:dist'], function () {
-  runSequence(['images', 'copy:extras', 'copy:fonts', 'client:build']);
+  runSequence(['bower','images', 'copy:extras', 'copy:fonts', 'client:build']);
 });
 
 gulp.task('default', ['build']);
