@@ -83,6 +83,14 @@ gulp.task('start:server', ['tmpcopy'], function() {
   });
 });
 
+// test for dist,but it can't use
+gulp.task('start:dist', function() {
+  $.connect.server({
+    root: [yeoman.app, 'dist'],
+    // Change this to '0.0.0.0' to access the server from outside.
+    port: 9001
+  });
+});
 gulp.task('start:server:test', function() {
   $.connect.server({
     root: ['test', yeoman.app, '.tmp'],
@@ -180,12 +188,15 @@ gulp.task('html', function () {
 
 gulp.task('images', function () {
   return gulp.src(yeoman.app + '/images/**/*')
-    .pipe($.cache($.imagemin({
-        optimizationLevel: 5,
-        progressive: true,
-        interlaced: true
-    })))
     .pipe(gulp.dest(yeoman.dist + '/images'));
+  //it has some error below:some pngs can't copy to dist/images
+  //return gulp.src(yeoman.app + '/images/**/*')
+  //  .pipe($.cache($.imagemin({
+  //      optimizationLevel: 5,
+  //      progressive: true,
+  //      interlaced: true
+  //  })))
+  //  .pipe(gulp.dest(yeoman.dist + '/images'));
 });
 
 gulp.task('copy:extras', function () {
