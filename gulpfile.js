@@ -91,6 +91,7 @@ gulp.task('start:dist', function() {
     port: 9001
   });
 });
+
 gulp.task('start:server:test', function() {
   $.connect.server({
     root: ['test', yeoman.app, '.tmp'],

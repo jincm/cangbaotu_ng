@@ -1,0 +1,7 @@
+yo angular:route user
+yo angular:route login
+yo angular:route register
+
+gulp serve
+
+
