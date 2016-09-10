@@ -40,6 +40,21 @@ angular
         controller: 'UserCtrl',
         controllerAs: 'user'
       })
+      .when('/nearby', {
+        templateUrl: 'views/nearby.html',
+        controller: 'NearbyCtrl',
+        controllerAs: 'nearby'
+      })
+      .when('/message', {
+        templateUrl: 'views/message.html',
+        controller: 'MessageCtrl',
+        controllerAs: 'message'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
       .otherwise({
         redirectTo: '/'
       });
