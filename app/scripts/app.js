@@ -55,6 +55,16 @@ angular
         controller: 'ContactCtrl',
         controllerAs: 'contact'
       })
+      .when('/youni', {
+        templateUrl: 'views/youni.html',
+        controller: 'YouniCtrl',
+        controllerAs: 'youni'
+      })
+      .when('/youni', {
+        templateUrl: 'views/youni.html',
+        controller: 'YouniCtrl',
+        controllerAs: 'youni'
+      })
       .otherwise({
         redirectTo: '/'
       });
