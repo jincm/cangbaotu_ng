@@ -37,6 +37,9 @@ chmod g+rwx -R /home/jincm/zuohaoshi/client/app     (otherwise:permission denied
 docker run --name=ubuntu_client -p 9000:9000 -p 35729:35729 -it ubuntu_client /bin/bash
 source /root/.profile
 
+#copy file to docker:beyond compare
+/var/lib/docker/aufs/mnt/9b3536e8cfd6401cd0f3ac6a4a7742774ea0ad321db3005cf0d33367698e851e/home/jincm/zuohaoshi
+
 #add new module
 yo angular:route new_module
 
