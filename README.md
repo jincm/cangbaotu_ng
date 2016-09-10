@@ -34,8 +34,11 @@ chmod g+rwx -R /home/jincm/zuohaoshi/client     (otherwise:permission denied, op
 
 
 #for docker
-docker run --name=ubuntu_client -p 9000:9000 -it ubuntu_client /bin/bash
+docker run --name=ubuntu_client -p 9000:9000 -p 35729:35729 -it ubuntu_client /bin/bash
 source /root/.profile
+
+#add new module
+yo angular:route new_module
 
 gulp build
 gulp serve
