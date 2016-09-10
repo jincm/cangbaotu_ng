@@ -30,7 +30,7 @@ registry = https://registry.npm.taobao.org
 npm install -g gulp bower yo  #generator-angular
 npm install gulp yo
 chmod g+rwx /root /root/.config /root/.config/configstore (otherwise:yo will error:permission denied, open '/root/.config/configstore/insight-yo.json')
-chmod g+rwx -R /home/jincm/zuohaoshi/client     (otherwise:permission denied, open '/home/jincm/zuohaoshi/client/app/scripts/app.js)
+chmod g+rwx -R /home/jincm/zuohaoshi/client/app     (otherwise:permission denied, open '/home/jincm/zuohaoshi/client/app/scripts/app.js)
 
 
 #for docker
