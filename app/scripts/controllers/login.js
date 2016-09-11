@@ -8,11 +8,7 @@
  * Controller of the cbtNgCssApp
  */
 angular.module('cbtNgCssApp')
-  .controller('LoginCtrl', [
-    '$scope',
-    '$window',
-    '$location',
-    function ($scope, $window, $location) {
+  .controller('LoginCtrl', function ($scope, $window, $location) {
       this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
@@ -26,6 +22,4 @@ angular.module('cbtNgCssApp')
         $window.localStorage.setItem('name','jincm');
         $location.path('/user').replace();
       };
-
-
-  }]);
+  });

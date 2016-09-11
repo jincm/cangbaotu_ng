@@ -29,18 +29,18 @@ angular.module('cbtNgCssApp')
 
       //test for user login and logout
       $scope.isLogin = function() {
-        console.log('check if is login');
+        //console.log('check if is login');
         if($window.localStorage.getItem('name') !== 'jincm') {
+          $scope.is_authed = false;
           console.log('has not login');
           return false;
         }
         else {
-          console.log('has login');
+          $scope.is_authed = true;
+          //console.log('has login');
           return true;
         }
       };
-      $scope.name = "jincm111";
-      console.log('here');
       //$window.localStorage.setItem('name','jincm');
-      console.log("main get is " + $window.localStorage.getItem('name'));
+      //console.log("main get is " + $window.localStorage.getItem('name'));
   });

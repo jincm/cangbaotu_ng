@@ -40,8 +40,20 @@ source /root/.profile
 #copy file to docker:beyond compare
 /var/lib/docker/aufs/mnt/9b3536e8cfd6401cd0f3ac6a4a7742774ea0ad321db3005cf0d33367698e851e/home/jincm/zuohaoshi
 
+#docker中安装bower组件
+bower search ngDialog --allow-root
+#对话框组件（不用bootstrap插件？）
+bower install ng-dialog --allow-root（https://github.com/likeastore/ngDialog）
+
+#参考的bootstrap和angularjs
+http://v3.bootcss.com/components/#dropdowns
+http://www.runoob.com/angularjs/angularjs-forms.html
+
 #add new module
+pushd /home/jincm/zuohaoshi/client
 yo angular:route new_module
 
+#编译运行
+pushd /home/jincm/zuohaoshi/client
 gulp build
 gulp serve
