@@ -60,11 +60,6 @@ angular
         controller: 'YouniCtrl',
         controllerAs: 'youni'
       })
-      .when('/youni', {
-        templateUrl: 'views/youni.html',
-        controller: 'YouniCtrl',
-        controllerAs: 'youni'
-      })
       .otherwise({
         redirectTo: '/'
       });
