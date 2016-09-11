@@ -8,11 +8,7 @@
  * Controller of the cbtNgCssApp
  */
 angular.module('cbtNgCssApp')
-  .controller('AppCtrl', [
-    '$scope',
-    '$window',
-    '$location',
-    function ($scope, $window, $location) {
+  .controller('AppCtrl', function ($scope, $window, $location) {
       this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
@@ -47,10 +43,4 @@ angular.module('cbtNgCssApp')
       console.log('here');
       //$window.localStorage.setItem('name','jincm');
       console.log("main get is " + $window.localStorage.getItem('name'));
-      console.log("auth is " + $scope.isUserAuth + " url is " + $location.path());
-      $scope.logout = function () {
-        console.log('logout success and clear');
-        $window.localStorage.removeItem('name');
-      };
-
-  }]);
+  });
