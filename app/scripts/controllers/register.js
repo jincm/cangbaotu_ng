@@ -14,4 +14,5 @@ angular.module('cbtNgCssApp')
       'AngularJS',
       'Karma'
     ];
+    console.log("register");
   });
