@@ -38,11 +38,36 @@ angular.module('cbtNgCssApp')
     $scope.get_identify_code = function() {
       console.log("input is " + JSON.stringify($scope.login));
       //$scope.login.identify_code = 111;
-      var http_path = 'http://192.168.3.3:8080/v1/u/register?jsonp=JSON_CALLBACK&account=' + $scope.login.phone;
-      $http.jsonp(http_path).success(function(res) {
-        console.log("response is " + res.body);
+      //var http_path = 'http://192.168.3.3:8080/api/v1/user/register?account=' + $scope.login.phone;
+      //$http.jsonp(http_path).success(function(res) {
+      //  console.log("response is " + res.body);
+      //});
+
+      //var promise = $http({
+      //  method: 'POST',
+      //  url: '/api/v1/user/register',
+      //  data: {
+      //    'account':$scope.login.phone
+      //  }});
+      var promise = $http({
+        method: 'GET',
+        url: '/api/v1/user/register',
+        params: {
+          'account':$scope.login.phone
+        }});
+      promise.success(function(data, status, config, headers){
+        console.log("get_identify_code here;result is " + data);
+        console.log("get_identify_code here;result is " + status);
+        console.log("get_identify_code here;result is " + config);
+        console.log("get_identify_code here;result is " + headers);
       });
-      console.log("get_identify_code here paht is " + http_path);
+      promise.error(function(data, status, config, headers){
+        console.log("get_identify_code error;result is " + data);
+        console.log("get_identify_code error;result is " + status);
+        console.log("get_identify_code error;result is " + config);
+        console.log("get_identify_code error;result is " + headers);
+      });
+      console.log("get_identify_code here;result is done");
     };
 
   }]);
